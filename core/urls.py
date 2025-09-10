@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views as core_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', core_views.estadisticas, name='estadisticas'), # Homepage is now stats
@@ -24,3 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')), # Added API URLs
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

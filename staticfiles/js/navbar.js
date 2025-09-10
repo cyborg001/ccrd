@@ -1,14 +1,12 @@
-const navLinks = document.querySelectorAll('nav ul li a');
-let maxWidth = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
 
-// Find the maximum width
-navLinks.forEach(link => {
-    if (link.offsetWidth > maxWidth) {
-        maxWidth = link.offsetWidth;
+    if (hamburgerBtn && navLinks) {
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+        });
     }
-});
-
-// Set all links to that maximum width
-navLinks.forEach(link => {
-    link.style.width = `${maxWidth}px`;
 });
