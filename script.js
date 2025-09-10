@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadIntroPage() {
         mainContent.innerHTML = `
             <h2>Página Introductoria: Mapa de Calor y Estadísticas Diarias</h2>
-            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                <div id="mapid" style="width: 60%; height: 500px;"></div>
-                <div style="width: 35%;">
+            <div class="intro-container">
+                <div id="mapid"></div>
+                <div class="stats-container">
                     <h3>Estadísticas del Día</h3>
                     <canvas id="dailyStatsChart"></canvas>
                 </div>
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <textarea id="description" name="descripcion" rows="5" required></textarea><br><br>
 
                 <label for="locationMap">Ubicación del Crimen (haga clic en el mapa):</label>
-                <div id="locationMap" style="height: 300px; width: 100%; margin-bottom: 15px; border-radius: 4px;"></div>
+                <div id="locationMap"></div>
                 <input type="hidden" id="latitud" name="latitud" required>
                 <input type="hidden" id="longitud" name="longitud" required>
 
